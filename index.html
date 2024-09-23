@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Blob Generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        svg {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <svg id="blob" viewBox="0 0 100 100"></svg>
+    <button id="generate">Generate Blob</button>
+
+    <script>
+        function randomBlob() {
+            const points = 10;
+            const blob = [];
+            for (let i = 0; i < points; i++) {
+                const angle = (i / points) * Math.PI * 2;
+                const radius = 30 + Math.random() * 20; // Random radius between 30 and 50
+                const x = 50 + radius * Math.cos(angle);
+                const y = 50 + radius * Math.sin(angle);
+                blob.push(`${x},${y}`);
+            }
+            return `M ${blob.join(' L')} Z`;
+        }
+
+        function generateBlob() {
+            const svg = document.getElementById('blob');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', randomBlob());
+            path.setAttribute('fill', 'lightblue'); // Change fill color as needed
+            path.setAttribute('stroke', 'darkblue'); // Change stroke color as needed
+            path.setAttribute('stroke-width', '2');
+            
+            svg.innerHTML = ''; // Clear previous blobs
+            svg.appendChild(path);
+        }
+
+        document.getElementById('generate').addEventListener('click', generateBlob);
+        generateBlob(); // Generate initial blob on load
+    </script>
+</body>
+</html>

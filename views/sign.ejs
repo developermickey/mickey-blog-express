@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title  %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="w-full min-h-screen mx-auto bg-zinc-800 text-white">
+    <header class="w-full flex items-center justify-between px-10 h-[70px] border-b-2">
+        <h3 class="w-56 text-2xl cursor-pointer">Mickey</h3>
+        <div class="w-full flex items-center justify-center gap-5">
+            <a class="text-lg" href="/">Home</a>
+            <a class="text-lg" href="/about">About Us</a>
+            <a class="text-lg" href="/blog">Blog</a>
+            <a class="text-lg" href="/contact">Contact</a>
+        </div>
+        <div class="flex w-64">
+            <a class="bg-transparent px-5 py-3 rounded-md text-lg" href="/login">Login</a>
+            <a class="bg-blue-500 px-5 py-3 rounded-md text-lg" href="/signup">Sign Up</a>
+        </div>
+    </header>
+
+            <form action="/create" method="post" class="w-full flex-col min-h-screen flex items-center justify-center">
+                <h3 class="text-2xl">Sign Up</h3>
+                <div class="mt-8">
+                    <div class="grid grid-cols-1 gap-6">
+                      <label class="block w-full">
+                        <span class="text-white">Full name</span>
+                        <input type="text" class="mt-1 block w-96 h-10 px-3 rounded-md text-black border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Full Name" name="name">
+                      </label>
+                      <label class="block">
+                        <span class="text-white">Email</span>
+                        <input type="email" class="mt-1 block w-96 h-10 px-3 rounded-md text-black border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="john@example.com" name="email">
+                      </label>
+                      
+                      
+                      <label class="block">
+                        <span class="text-white">Password</span>
+                        <input type="password" class="mt-1 block w-96 h-10 px-3 rounded-md text-black border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Password" name="password">
+                        
+                      </label>
+                      <label class="block">
+                        <input type="submit" class="mt-1 block w-96 h-10 px-3 rounded-md bg-blue-500 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="Sign Up">
+                        
+                      </label>
+                     
+                    </div>
+                  </div>
+      </form>
+       
+      </div>
+
+
+    
+</body>
+</html>
